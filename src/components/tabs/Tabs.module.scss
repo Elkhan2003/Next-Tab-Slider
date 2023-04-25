@@ -1,0 +1,157 @@
+.tabs__container {
+	width: 100%;
+	padding: 10px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+	@media (max-width: 500px) {
+		padding: 0;
+	}
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	$height__button: 60px;
+
+	.list {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		label {
+			overflow: hidden;
+			padding: 0 15px;
+			height: $height__button;
+			line-height: $height__button;
+
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+
+			font-size: 21px;
+			font-weight: 500;
+			transition: all 0.5s ease;
+
+			cursor: pointer;
+			color: #333;
+			z-index: 12;
+
+			&:hover {
+				color: #6d50e2;
+			}
+
+			.icon {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.title {
+				margin-left: 7px;
+
+				@media (max-width: 900px) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.slider {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: $height__button;
+		width: 100%;
+		border-radius: 12px;
+		background: #6d50e2;
+		transition: all 0.4s ease;
+	}
+
+	.text__content {
+		width: 100%;
+		height: 100%;
+
+		.feed__back {
+			display: block;
+		}
+	}
+
+	.left__block__text {
+		display: none;
+		color: black;
+
+		margin: 0 15px;
+
+		@media (max-width: 500px) {
+			margin: 0 7px;
+		}
+
+		.title {
+			font-size: 25px;
+			margin-bottom: 10px;
+			font-weight: 500;
+		}
+
+		.text {
+			text-align: justify;
+		}
+	}
+
+	.input {
+		display: none;
+	}
+}
+
+.input__feed__back:checked ~ .list label.feed__back,
+.input__calendar:checked ~ .list label.calendar,
+.input__staff:checked ~ .list label.staff,
+.input__photo:checked ~ .list label.photo,
+.input__video:checked ~ .list label.video,
+.input__certificate:checked ~ .list label.certificate {
+	color: #fff;
+}
+
+.input__feed__back:checked ~ .list .slider {
+	top: 0;
+}
+
+.input__calendar:checked ~ .list .slider {
+	top: 60px;
+}
+
+.input__staff:checked ~ .list .slider {
+	top: 120px;
+}
+
+.input__photo:checked ~ .list .slider {
+	top: 180px;
+}
+
+.input__video:checked ~ .list .slider {
+	top: 240px;
+}
+
+.input__certificate:checked ~ .list .slider {
+	top: 300px;
+}
+
+.input__feed__back:checked ~ .text__content .feed__back,
+.input__calendar:checked ~ .text__content .calendar,
+.input__staff:checked ~ .text__content .staff,
+.input__photo:checked ~ .text__content .photo,
+.input__video:checked ~ .text__content .video,
+.input__certificate:checked ~ .text__content .certificate {
+	display: block;
+}
+
+.input__calendar:checked ~ .text__content .feed__back,
+.input__staff:checked ~ .text__content .feed__back,
+.input__photo:checked ~ .text__content .feed__back,
+.input__video:checked ~ .text__content .feed__back,
+.input__certificate:checked ~ .text__content .feed__back {
+	display: none;
+}
