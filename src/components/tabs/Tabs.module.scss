@@ -1,26 +1,34 @@
 .tabs__container {
-	padding: 10px;
+	//padding: 10px;
 	width: 100%;
 	border-radius: 12px;
+	//background: #fff;
 	//box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
 	color: #000;
-
-	@media (max-width: 1200px) {
-		padding: 0px;
-	}
 
 	.content {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
 
+		@media (max-width: 1150px) {
+			flex-direction: column;
+		}
+
 		.buttons {
-			margin-right: 10px;
+			margin-right: 7px;
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
 			align-items: flex-start;
+
+			@media (max-width: 1150px) {
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+			}
 
 			.button {
 				position: relative;
@@ -42,7 +50,7 @@
 
 				transition: all 0.5s ease;
 
-				@media (max-width: 1200px) {
+				@media (max-width: 870px) {
 					padding: 12px;
 				}
 
@@ -73,10 +81,7 @@
 					display: flex;
 					justify-content: center;
 					align-items: center;
-
-					@media (max-width: 1200px) {
-						font-size: 23px;
-					}
+					font-size: 23px;
 				}
 
 				.label {
@@ -86,7 +91,7 @@
 					margin-left: 7px;
 					//mix-blend-mode: exclusion;
 
-					@media (max-width: 1200px) {
+					@media (max-width: 870px) {
 						display: none;
 					}
 				}
