@@ -1,5 +1,5 @@
 {
-  "name": "ortodont-slider",
+  "name": "next-tabs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "@svgr/webpack": "^7.0.0",
-    "@types/node": "18.16.0",
-    "@types/react": "18.0.38",
-    "@types/react-dom": "18.0.11",
-    "@types/swiper": "^6.0.0",
+    "@types/node": "18.16.1",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "framer-motion": "^10.12.4",
     "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.62.0",
+    "sass": "^1.62.1",
     "swiper": "^9.2.4",
     "typescript": "5.0.4"
   }

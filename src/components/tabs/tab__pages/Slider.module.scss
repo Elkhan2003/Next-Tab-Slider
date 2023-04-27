@@ -4,14 +4,14 @@
 	//max-width: 500px;
 
 	.card {
-		height: 300px;
+		//height: 300px;
 		margin-bottom: 30px;
 
 		.feed__back {
 			position: relative;
 			box-sizing: border-box;
 			padding: 0 10px;
-			height: 200px;
+			height: 190px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -30,7 +30,7 @@
 				height: 50px;
 				background: #f4f4f4;
 				position: absolute;
-				top: 158px;
+				top: 148px;
 				left: 20px;
 				transform: rotate(72deg);
 				z-index: -1;

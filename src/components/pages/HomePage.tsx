@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React, { FC } from "react";
 import scss from "@/components/pages/Style.module.scss";
-import SwiperPage from "@/components/swiper/SwiperPage";
 import Tabs from "@/components/tabs/Tabs";
 
 const HomePage: FC = () => {
@@ -12,11 +11,8 @@ const HomePage: FC = () => {
 			</Head>
 			<div className={scss.home__page}>
 				<div className="container">
-					<div className={scss.contant}>
-						<h4>lorem ipsum dolor sit amet, consectetur adip</h4>
-						{/*<SwiperPage />*/}
-						<Tabs />
-					</div>
+					<h4>lorem ipsum dolor sit amet, consectetur adip</h4>
+					<Tabs />
 				</div>
 			</div>
 		</>

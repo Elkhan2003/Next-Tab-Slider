@@ -1,172 +1,108 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
+import { motion } from "framer-motion";
 import scss from "./Tabs.module.scss";
-import FeedBack from "@/components/tabs/pages/FeedBack";
-import Calendar from "@/components/tabs/pages/Calendar";
-import Staff from "@/components/tabs/pages/Staff";
-import Photo from "@/components/tabs/pages/Photo";
-import Video from "@/components/tabs/pages/Video";
-import Certificate from "@/components/tabs/pages/Сertificate";
+import TabFeedBack from "@/components/tabs/tab__pages/TabFeedBack";
+import TabCalendar from "@/components/tabs/tab__pages/TabCalendar";
+import TabStaff from "@/components/tabs/tab__pages/TabStaff";
+import TabPhoto from "@/components/tabs/tab__pages/TabPhoto";
+import TabVideo from "@/components/tabs/tab__pages/TabVideo";
+import TabСertificate from "@/components/tabs/tab__pages/TabСertificate";
 import {
 	FeedBackIcon,
-	CalendarIcon,
 	StaffIcon,
 	PhotoIcon,
 	VideoIcon,
 	CertificateIcon
 } from "@/components/svgs";
 
+interface tabsProps {
+	id: number;
+	icon: any;
+	label: string;
+	page?: any;
+}
+
+const tabs: tabsProps[] = [
+	{
+		id: 1,
+		icon: <FeedBackIcon />,
+		label: "Отзывы",
+		page: <TabFeedBack />
+	},
+	{
+		id: 2,
+		icon: <CertificateIcon />,
+		label: "Расписание",
+		page: <TabCalendar />
+	},
+	{
+		id: 3,
+		icon: <StaffIcon />,
+		label: "Сотрудники",
+		page: <TabStaff />
+	},
+	{
+		id: 4,
+		icon: <PhotoIcon />,
+		label: "Фото",
+		page: <TabPhoto />
+	},
+	{
+		id: 5,
+		icon: <VideoIcon />,
+		label: "Видео",
+		page: <TabVideo />
+	},
+	{
+		id: 6,
+		icon: <CertificateIcon />,
+		label: "Сертификат",
+		page: <TabСertificate />
+	}
+];
+
 const Tabs: FC = () => {
+	const [activeTab, setActiveTab] = useState<number>(tabs[0].id);
+
 	return (
 		<>
-			<div>
-				<div className={scss.tabs__container}>
-					<div className={scss.content}>
-						{/* ? feed__back */}
-						<input
-							className={`${scss.input__feed__back} ${scss.input}`}
-							type="radio"
-							name="slider"
-							defaultChecked
-							id="feed__back"
-						/>
-
-						{/* ? calendar */}
-						<input
-							className={`${scss.input__calendar} ${scss.input}`}
-							type="radio"
-							name="slider"
-							id="calendar"
-						/>
-
-						{/* ? staff */}
-						<input
-							className={`${scss.input__staff} ${scss.input}`}
-							type="radio"
-							name="slider"
-							id="staff"
-						/>
-
-						{/* ? photo */}
-						<input
-							className={`${scss.input__photo} ${scss.input}`}
-							type="radio"
-							name="slider"
-							id="photo"
-						/>
-
-						{/* ? video */}
-						<input
-							className={`${scss.input__video} ${scss.input}`}
-							type="radio"
-							name="slider"
-							id="video"
-						/>
-
-						{/* ? certificate */}
-						<input
-							className={`${scss.input__certificate} ${scss.input}`}
-							type="radio"
-							name="slider"
-							id="certificate"
-						/>
-
-						{/* ! buttons */}
-						<div className={scss.list}>
-							{/* ? feed__back */}
-							<label htmlFor="feed__back" className={scss.feed__back}>
-								<span className={scss.icon}>
-									<FeedBackIcon />
-								</span>
-								<span className={scss.title}>
-									<pre>Отзывы</pre>
-								</span>
-							</label>
-
-							{/* ? calendar */}
-							<label htmlFor="calendar" className={scss.calendar}>
-								<span className={scss.icon}>
-									<CalendarIcon />
-								</span>
-								<span className={scss.title}>
-									<pre>Расписание</pre>
-								</span>
-							</label>
-
-							{/* ? staff */}
-							<label htmlFor="staff" className={scss.staff}>
-								<span className={scss.icon}>
-									<StaffIcon />
-								</span>
-								<span className={scss.title}>
-									<pre>Сотрудники</pre>
-								</span>
-							</label>
-
-							{/* ? photo */}
-							<label htmlFor="photo" className={scss.photo}>
-								<span className={scss.icon}>
-									<PhotoIcon />
-								</span>
-								<span className={scss.title}>
-									<pre>Фото</pre>
-								</span>
-							</label>
-
-							{/* ? video */}
-							<label htmlFor="video" className={scss.video}>
-								<span className={scss.icon}>
-									<VideoIcon />
-								</span>
-								<span className={scss.title}>
-									<pre>Видео</pre>
-								</span>
-							</label>
-
-							{/* ? certificate */}
-							<label htmlFor="certificate" className={scss.certificate}>
-								<span className={scss.icon}>
-									<CertificateIcon />
-								</span>
-								<span className={scss.title}>
-									<pre>Сертификат</pre>
-								</span>
-							</label>
-							<div className={scss.slider}></div>
-						</div>
-
-						{/* ! content */}
-						<div className={scss.text__content}>
-							{/* ? feed__back */}
-							<div className={`${scss.feed__back} ${scss.left__block__text}`}>
-								<FeedBack title={scss.title} text={scss.text} />
-							</div>
-
-							{/* ? calendar */}
-							<div className={`${scss.calendar} ${scss.left__block__text}`}>
-								<Calendar title={scss.title} text={scss.text} />
-							</div>
-
-							{/* ? staff */}
-							<div className={`${scss.staff} ${scss.left__block__text}`}>
-								<Staff title={scss.title} text={scss.text} />
-							</div>
-
-							{/* ? photo */}
-							<div className={`${scss.photo} ${scss.left__block__text}`}>
-								<Photo title={scss.title} text={scss.text} />
-							</div>
-
-							{/* ? video */}
-							<div className={`${scss.video} ${scss.left__block__text}`}>
-								<Video title={scss.title} text={scss.text} />
-							</div>
-
-							{/* ? certificate */}
-							<div className={`${scss.certificate} ${scss.left__block__text}`}>
-								<Certificate title={scss.title} text={scss.text} />
-							</div>
-						</div>
+			<div className={scss.tabs__container}>
+				<div className={scss.content}>
+					<div className={scss.buttons}>
+						{tabs.map((tab) => (
+							<button
+								key={tab.id}
+								onClick={() => {
+									setActiveTab(tab.id);
+								}}
+								className={
+									activeTab === tab.id
+										? `${scss.button} ${scss.active}`
+										: `${scss.button}`
+								}
+							>
+								{activeTab === tab.id && (
+									<motion.div
+										layoutId="active-pill"
+										className={scss.active}
+										style={{
+											borderRadius: 12
+										}}
+										transition={{ type: "spring", duration: 0.6 }}
+									/>
+								)}
+								<span className={scss.icon}>{tab.icon}</span>
+								<span className={scss.label}>{tab.label}</span>
+							</button>
+						))}
 					</div>
+					{tabs.map((tab) =>
+						activeTab === tab.id ? (
+							<div key={tab.id} className={scss.tabs__content}>
+								{tab.page}
+							</div>
+						) : null
+					)}
 				</div>
 			</div>
 		</>

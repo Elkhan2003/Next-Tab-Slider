@@ -20,7 +20,7 @@ interface TabProps {
 	text?: any;
 }
 
-const FeedBack: FC<TabProps> = ({ title, text }) => {
+const TabFeedBack: FC<TabProps> = ({ title, text }) => {
 	const options: SwiperOptions = {
 		modules: [Navigation, Pagination, Autoplay],
 		rewind: true,
@@ -84,7 +84,7 @@ const FeedBack: FC<TabProps> = ({ title, text }) => {
 	return (
 		<>
 			<div className={scss.FeedBack__container}>
-				{/*<div className={title}>awdBlog Content</div>*/}
+				<div className={title}>Code Content</div>
 				<Swiper {...options}>
 					{sliders.map((slid) => (
 						<SwiperSlide key={slid.id}>
@@ -104,9 +104,8 @@ const FeedBack: FC<TabProps> = ({ title, text }) => {
 						</SwiperSlide>
 					))}
 				</Swiper>
-				{/*<p className={text}></p>*/}
 			</div>
 		</>
 	);
 };
-export default FeedBack;
+export default TabFeedBack;

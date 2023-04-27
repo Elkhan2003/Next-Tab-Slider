@@ -5,10 +5,10 @@ interface TabProps {
 	text?: any;
 }
 
-const Video: FC<TabProps> = ({ title, text }) => {
+const TabСertificate: FC<TabProps> = ({ title, text }) => {
 	return (
 		<>
-			<div className={title}>About Content</div>
+			<div className={title}>Сertificate Content</div>
 			<p className={text}>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi
 				excepturi ducimus sequi dignissimos expedita tempore omnis quos cum,
@@ -18,4 +18,4 @@ const Video: FC<TabProps> = ({ title, text }) => {
 		</>
 	);
 };
-export default Video;
+export default TabСertificate;
