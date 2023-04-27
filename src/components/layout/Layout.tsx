@@ -4,9 +4,9 @@ import scss from "./Layout.module.scss";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Montserrat({ subsets: ["latin"] });
 
 interface LayoutProps {
 	children: ReactNode;
@@ -21,7 +21,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className={`${scss.layout} ${inter.className}`}>
+			<div className={`${scss.layout} ${font.className}`}>
 				<header>
 					<Header />
 				</header>
