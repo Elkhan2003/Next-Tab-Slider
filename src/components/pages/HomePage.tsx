@@ -11,7 +11,6 @@ const HomePage: FC = () => {
 			</Head>
 			<div className={scss.home__page}>
 				<div className="container">
-					<h4>lorem ipsum dolor sit amet, consectetur adip</h4>
 					<Tabs />
 				</div>
 			</div>
