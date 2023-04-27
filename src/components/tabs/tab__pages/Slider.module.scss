@@ -1,16 +1,13 @@
 .FeedBack__container {
 	margin: 0 auto;
 	width: 100%;
-	//max-width: 500px;
 
 	.card {
-		//height: 300px;
 		margin-bottom: 30px;
 
 		.feed__back {
-			position: relative;
-			box-sizing: border-box;
 			padding: 0 10px;
+			position: relative;
 			height: 190px;
 			display: flex;
 			justify-content: center;
@@ -18,20 +15,21 @@
 			background: #f4f4f4;
 			border-radius: 4px;
 			text-align: center;
-			font-style: normal;
 			font-weight: 400;
 			font-size: 16px;
 			line-height: 130%;
 			color: #161616;
-			z-index: 2;
+			z-index: 10;
 
-			.box__for__bg {
-				width: 50px;
-				height: 50px;
-				background: #f4f4f4;
+			&:after {
+				content: "";
 				position: absolute;
 				top: 148px;
 				left: 20px;
+
+				width: 50px;
+				height: 50px;
+				background: #f4f4f4;
 				transform: rotate(72deg);
 				z-index: -1;
 			}

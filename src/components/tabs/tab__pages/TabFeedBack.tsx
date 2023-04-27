@@ -89,10 +89,7 @@ const TabFeedBack: FC<TabProps> = ({ title, text }) => {
 					{sliders.map((slid) => (
 						<SwiperSlide key={slid.id}>
 							<div className={scss.card}>
-								<p className={scss.feed__back}>
-									{slid.text}
-									<span className={scss.box__for__bg}></span>
-								</p>
+								<p className={scss.feed__back}>{slid.text}</p>
 								<div className={scss.user}>
 									<Image className={scss.image} src={slid.img} alt={"pic"} />
 									<div className={scss.user__working}>
