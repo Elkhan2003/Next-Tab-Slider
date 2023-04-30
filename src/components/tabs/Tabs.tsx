@@ -12,7 +12,8 @@ import {
 	StaffIcon,
 	PhotoIcon,
 	VideoIcon,
-	CertificateIcon
+	CertificateIcon,
+	CalendarIcon
 } from "@/components/svgs";
 
 interface tabsProps {
@@ -31,7 +32,7 @@ const tabs: tabsProps[] = [
 	},
 	{
 		id: 2,
-		icon: <CertificateIcon />,
+		icon: <CalendarIcon />,
 		label: "Расписание",
 		page: <TabCalendar />
 	},
